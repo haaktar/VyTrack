@@ -46,4 +46,19 @@ public class LoginStepDefinitions {
 
         loginPage.login(string);
     }
+
+    @When("users log in as {string} username and {string} password")
+    public void users_log_in_as_username_and_password(String string, String string2) {
+
+        loginPage.login(string, string2);
+
+    }
+
+    @Then("user verifies that {string} message is displayed.")
+    public void user_verifies_that_message_is_displayed(String expected) {
+        String warningMessageText = loginPage.warningPasswordText();
+
+        Assert.assertEquals("Warning Message is not Displayed", warningMessageText, expected);
+
+    }
 }

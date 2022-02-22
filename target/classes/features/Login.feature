@@ -11,3 +11,10 @@ Feature: As user I want to be able to log in under different roles
     Given user is on the login page
     When users log in as "driver"
     Then user should see dash board page
+
+@negativeLogin
+  Scenario: Invalid Password
+    Given user is on the login page
+    When users log in as "storemanager85" username and "wrong" password
+    Then user verifies that "Invalid user name or password." message is displayed.
+

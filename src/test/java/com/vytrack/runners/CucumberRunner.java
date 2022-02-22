@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/main/resources/features",
         dryRun = false, glue = "com/vytrack/stepDefinitions",
-       // tags = "@parametrizedTest",
+        tags = "@negativeLogin",
         plugin = {"html:target/default-cucumber-reports",}
 
 )
