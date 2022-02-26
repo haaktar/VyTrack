@@ -1,5 +1,6 @@
 package com.vytrack.utils;
 
+import org.checkerframework.checker.index.qual.PolyUpperBound;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -22,5 +23,14 @@ public class BrowserUtil {
         wait.until(ExpectedConditions.elementToBeClickable(element));
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click");
 
+    }
+
+
+    public static void enterText(WebElement element, String text) {
+        wait.until(ExpectedConditions.visibilityOf(element));
+        element.clear();
+        element.sendKeys(text);
+        wait.until(ExpectedConditions.attributeToBe(element, "value", text));
+        System.out.println("Entering Text: " + text);
     }
 }

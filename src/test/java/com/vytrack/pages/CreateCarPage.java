@@ -1,5 +1,6 @@
 package com.vytrack.pages;
 
+import com.vytrack.utils.BrowserUtil;
 import com.vytrack.utils.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -33,6 +34,11 @@ public class CreateCarPage extends BasePage {
         licencePlateInputBox.clear();
         licencePlateInputBox.sendKeys(licencePlate);
 
+
+    }
+
+    public void enterModelYear(String modelYear){
+        BrowserUtil.enterText(modelYearInputBox, modelYear);
 
     }
 }

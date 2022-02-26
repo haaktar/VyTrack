@@ -27,6 +27,12 @@ public class CreateCarDefinition {
 
     @When("users add new vehicle infomation")
     public void users_add_new_vehicle_infomation(Map<String, String> dataTable) {
+        dataTable.forEach((k, v) -> System.out.println("Key " + k + " value , " + v));
+
+        System.out.println("Licence Plate : " + dataTable.get("Licence Plate"));
+        System.out.println("Model Year : " + dataTable.get("Model Year"));
+
+        createCarPage.enterLicencePlate(dataTable.get("Licence Plate"));
 
     }
 }
